@@ -1,0 +1,5 @@
+#!/bin/bash
+export PATH=$HOME/esp8266/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+
+make clean && make && make flash
+
