@@ -15,7 +15,8 @@
 
 static void user_procTask(os_event_t *events);
 os_event_t user_procTaskQueue[user_procTaskQueueLen];
-static volatile os_timer_t some_timer;
+//static volatile os_timer_t some_timer;
+static os_timer_t some_timer;
 
 struct BannedBSSID {
     u8 bssidValue[6];
@@ -162,7 +163,7 @@ static void ICACHE_FLASH_ATTR user_procTask(os_event_t *events) {
 /** Entry point **/
 void ICACHE_FLASH_ATTR user_init( void ) {
     os_printf(">>>%s\n", __FUNCTION__ );
-    os_delay_us(1*1000*1000);
+    os_delay_us(65535);
     isInitialized=false;
     STAILQ_INIT(&BannedBSSIDHead);
     uartInit();
